@@ -24,3 +24,11 @@ const roomSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Room', roomSchema);
+
+maintenanceLog: [
+ {
+    date: { type: Date, default: Date.now },
+    issue: String, // e.g., "Broken AC"
+    fixed: Boolean
+ }
+]
