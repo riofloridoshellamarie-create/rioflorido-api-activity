@@ -5,15 +5,16 @@ const roomSchema = new mongoose.Schema({
         type: Number,
         required: true,
         unique: true,
+        min: [100, 'Room number must be 3 digits'],
     },
     type: {
         type: String,
         required: true,
-        unique: true,
     },
     price: {
         type: Number,
         required: true,
+        min: [0, 'Price cannot be negative'],
     },
     isBooked: {
         type: Boolean,
