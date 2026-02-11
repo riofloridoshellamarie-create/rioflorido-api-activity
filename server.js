@@ -10,7 +10,7 @@ connectDB();
 
 // middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended:true }));
+app.use(express.urlencoded({ extended: true}));
 
 // Load Config
 const PORT = process.env.PORT || 3000;
