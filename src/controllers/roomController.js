@@ -1,6 +1,6 @@
 
 
-const Room = require(' .. /models/roomModel');
+const Room = require('../models/roomModel');
 
 // 1. GET ALL: List all rooms
 const getAllRooms = async (req, res) => {
@@ -58,7 +58,7 @@ const deleteRoom = async (req, res) => {
 };
 
 module.exports = {
-    getAlLRooms,
+    getAllRooms,
     createRoom,
     getRoomById,
     updateRoom,

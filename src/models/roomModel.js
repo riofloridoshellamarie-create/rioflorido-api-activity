@@ -20,15 +20,15 @@ const roomSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
-    features: [String],
+    features: [String], // e.g., ["Ocean View", "King Bed"]
+    maintenanceLog: [
+        {
+            date: { type: Date, default: Date.now },
+            issue: String, // e.g., "Broken AC"
+            fixed: Boolean
+        }
+    ]
 });
 
 module.exports = mongoose.model('Room', roomSchema);
 
-maintenanceLog: [
- {
-    date: { type: Date, default: Date.now },
-    issue: String, // e.g., "Broken AC"
-    fixed: Boolean
- }
-]
