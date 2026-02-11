@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const roomSchema = new mongoose.Schema({
     roomNumber: {
         type: Number,
@@ -19,7 +20,15 @@ const roomSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    maintenance: [
+        {
+            date: {type: Date, default: Date.now},
+            issue: String, 
+            fixed: Boolean
+        }
+    ],
     features: [String],
 });
 
 module.exports = mongoose.model('Room', roomSchema);
+

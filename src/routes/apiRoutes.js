@@ -1,5 +1,5 @@
 const express = require('express' );
-const router = express. Router( );
+const router = express.Router();
 
 // Import the Controller
 const {
@@ -8,7 +8,7 @@ const {
     getRoomById,
     updateRoom,
     deleteRoom,
-} = require(' .. /controllers/roomController');
+} = require('../controllers/roomController');
 
 // Routes
 router.get('/rooms', getAllRooms);
