@@ -1,9 +1,5 @@
-const express = require('express' );
-<<<<<<< HEAD
+const express = require('express');
 const router = express.Router();
-=======
-const router = express.Router( );
->>>>>>> 8bf48fef67bbb8a98d96b7b010df60a0bfc96916
 
 // Import the Controller
 const {
@@ -14,11 +10,29 @@ const {
     deleteRoom,
 } = require('../controllers/roomController');
 
+
+const {
+    getAllGuest,
+    createGuest
+} = require('../controllers/guestController');
+
+
+const {
+    getAllBooking,
+    createBooking
+} = require('../controllers/bookingController');
+
 // Routes
 router.get('/rooms', getAllRooms);
 router.post('/rooms', createRoom);
 router.get('/rooms/:id', getRoomById);
 router.put('/rooms/:id', updateRoom);
 router.delete('/rooms/:id', deleteRoom);
+
+router.get('/guests', getAllGuest);
+router.post('/guests', createGuest);
+
+router.get('/bookings', getAllBooking);
+router.post('/bookings', createBooking);
 
 module.exports = router;
