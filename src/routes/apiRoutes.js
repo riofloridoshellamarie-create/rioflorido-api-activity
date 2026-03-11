@@ -22,6 +22,11 @@ const {
     createBooking
 } = require('../controllers/bookingController');
 
+const { 
+    protect, 
+    authorize 
+} = require('../middleware/authMiddleware');
+
 // Routes
 router.get('/rooms', getAllRooms);
 router.post('/rooms', createRoom);
@@ -34,5 +39,8 @@ router.post('/guests', createGuest);
 
 router.get('/bookings', getAllBooking);
 router.post('/bookings', createBooking);
+
+//router.get('/', getRooms);
+router.post('/', protect, authorize('admin', 'manager'), createRoom);
 
 module.exports = router;
